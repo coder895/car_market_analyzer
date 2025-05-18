@@ -1,0 +1,72 @@
+# Claude Code: Build a Resource-Efficient Car Market Trend Analyzer for Windows
+
+Create a lightweight Python application that analyzes car market trends on Facebook Marketplace, optimized for Windows systems with limited CPU resources. Your solution should include:
+
+## 1. Resource-Efficient Car Listing Scraper
+Write a script that:
+- Uses minimal-footprint Selenium configuration with reduced memory usage
+- Implements headless browser mode with configurable image loading (off by default)
+- Employs incremental scraping with pause/resume capability to avoid memory spikes
+- Uses Windows Task Scheduler for off-peak data collection instead of continuous running
+- Implements data batching to process listings in small chunks
+- Stores compressed data in a space-efficient SQLite database
+- Provides fallback to simplified HTML parsing when system resources are constrained
+
+## 2. Optimized Market Trend Analysis
+Implement efficient trend analysis that:
+- Processes data in small batches to minimize memory usage
+- Uses pre-aggregation for common metrics to avoid recomputation
+- Implements lazy loading for analysis modules that aren't actively being used
+- Caches processed results to reduce CPU load during UI interactions
+- Provides configurable data retention periods to limit database size
+- Includes lightweight analysis mode for older/slower systems
+- Implements progressive computation that can be paused/resumed
+
+## 3. Windows-Optimized Interface
+Design a Windows-friendly interface with:
+- Native Windows 10/11 styling for familiar user experience
+- Resource usage monitor with auto-throttling capabilities
+- Efficient drawing routines to minimize UI refresh overhead
+- Pagination for large datasets instead of loading everything at once
+- Background task manager that respects system idle states
+- Start menu and taskbar integration for easy access
+- Optional system tray mode for minimal resource usage
+
+## 4. Performance Features
+Include performance optimizations like:
+- On-demand data loading instead of preloading everything
+- Configurable scraping depth based on available system resources
+- Intelligent scheduling that runs intensive tasks when system is idle
+- Data pruning options to maintain database efficiency
+- Minimal dependencies to reduce application footprint
+- Memory-mapped file access for large datasets
+- Optional reduced functionality mode for very limited hardware
+
+## 5. Resource-Aware Background Operations
+Design background processes to:
+- Monitor and respect CPU/memory limits set by user
+- Implement exponential backoff for scraping when system is under load
+- Use Windows-specific process priority controls
+- Provide hibernation mode during periods of system stress
+- Implement incremental data updates rather than full rescans
+- Use Windows events for efficient process synchronization
+- Pause operations when on battery power (for laptops)
+
+## Technical Implementation Details
+- Use SQLite with proper indexing for efficient data storage and retrieval
+- Implement data compression for stored listings
+- Use lightweight Tkinter for UI rather than resource-heavy frameworks
+- Provide installation routine that optimizes for Windows environment
+- Include auto-tuning based on initial system performance assessment
+- Implement resource usage governor with configurable thresholds
+- Create startup option to run with minimal features for very low-end systems
+
+## Distribution and Setup
+- Package the application as a lightweight Windows executable
+- Include a system requirements checker on startup
+- Provide clear user guidance for resource optimization
+- Create smart defaults based on detected system capabilities
+- Include optional components that can be disabled to save resources
+- Design for Windows 10/11 compatibility with fallback support for older versions
+
+This optimized application will provide valuable car market insights even on limited hardware, with smart resource management ensuring responsive performance on Windows systems with modest specifications.
